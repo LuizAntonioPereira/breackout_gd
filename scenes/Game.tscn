@@ -51,6 +51,7 @@ shape = SubResource( 8 )
 [node name="start" type="Node2D" parent="."]
 
 [node name="btn_start" type="TouchScreenButton" parent="start"]
+modulate = Color( 0, 0, 0, 1 )
 position = Vector2( 173, 533 )
 scale = Vector2( 5.9375, 1.9375 )
 normal = ExtResource( 5 )

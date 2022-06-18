@@ -7,7 +7,7 @@ onready var bk = preload("res://scenes/block.tscn")
 var x = 50
 var y = 70
 var a = 70
-var b = 30
+var b = 40
 var yes = true
 
 
@@ -26,6 +26,7 @@ func _process(delta):
 	pass
 
 func create_block():
+	
 	var num = 0
 	
 	for i in range(8):
@@ -38,6 +39,7 @@ func create_block():
 
 
 func _on_btn_start_pressed():
+	
 	$start.visible = false
 	$platform.visible = true
 	$ball.visible = true

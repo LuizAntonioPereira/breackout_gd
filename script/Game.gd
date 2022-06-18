@@ -8,26 +8,28 @@ var x = 50
 var y = 70
 var a = 70
 var b = 40
-var yes = true
-
+var num = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.play = false	
 	Global.point = 0
+			
+	for child in get_children().find("block"):
+		child.queue_free()
+	
 
 	pass # Replace with function body.
 
 
 func _process(delta):
+	
 	$points.text =	str(Global.point)
-	if Global.play == true and yes == true:
-		create_block()
-		yes = false
+	if Global.play == true:
+		create_block()		
 	pass
 
 func create_block():
-	
-	var num = 0
 	
 	for i in range(8):
 		for j in range(8):

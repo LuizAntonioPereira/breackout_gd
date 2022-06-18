@@ -8,13 +8,14 @@ var y = 700
 var yes = true
 
 func _ready():
+	Global.play = false	
 	pass
 
 
 func _physics_process(delta):
 	if Global.play == true and yes == true:
 		direction = Vector2(x,y)
-		yes = false
+		yes = false			
 	
 	var col = move_and_collide(direction * delta)
 	if col:

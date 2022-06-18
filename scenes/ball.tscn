@@ -20,3 +20,5 @@ scale = Vector2( 1.05, 1.04 )
 [node name="Sprite" type="Sprite" parent="."]
 scale = Vector2( 0.029, 0.03 )
 texture = ExtResource( 2 )
+
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

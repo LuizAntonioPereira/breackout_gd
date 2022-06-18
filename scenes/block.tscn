@@ -6,7 +6,7 @@
 extents = Vector2( 28, 7.5 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 30, 10 )
+extents = Vector2( 31, 11 )
 
 [node name="block" type="StaticBody2D"]
 script = ExtResource( 1 )
@@ -24,7 +24,6 @@ shape = SubResource( 1 )
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-modulate = Color( 0.988235, 0.0196078, 0.0196078, 1 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="Area2D" to="." method="body_entered"]

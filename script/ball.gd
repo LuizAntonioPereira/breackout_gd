@@ -21,9 +21,6 @@ func _physics_process(delta):
 		var reflect = col.remainder.bounce(col.normal)
 		direction = direction.bounce(col.normal)
 		move_and_collide(reflect)
-		#if ($ball.collide.name == 'block'):
-		#	$ball.collide.hit()
-
 
 func _on_VisibilityNotifier2D_screen_exited():
 	get_tree().reload_current_scene()

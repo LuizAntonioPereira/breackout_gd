@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/ball.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/platform.tscn" type="PackedScene" id=3]
+[ext_resource path="res://script/Game.gd" type="Script" id=4]
+[ext_resource path="res://assets/flatDark11.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/KdamThmorPro-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 44
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://fonts/KdamThmorPro-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 40
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://fonts/KdamThmorPro-Regular.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+font_data = SubResource( 5 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 43.0 ],
+"_edit_vertical_guides_": [ 10.0 ]
+}
+
+[node name="start" type="Node2D" parent="."]
+
+[node name="btn_start" type="TouchScreenButton" parent="start"]
+position = Vector2( 173, 533 )
+scale = Vector2( 5.9375, 1.9375 )
+normal = ExtResource( 5 )
+
+[node name="lbl_btn" type="Label" parent="start"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 196.0
+margin_top = 544.0
+margin_right = 441.0
+margin_bottom = 613.0
+custom_fonts/font = SubResource( 2 )
+text = "Start"
+align = 1
+valign = 1
+uppercase = true
+
+[node name="lbl_text" type="Label" parent="start"]
+margin_left = 131.0
+margin_top = 304.0
+margin_right = 479.0
+margin_bottom = 422.0
+custom_fonts/font = SubResource( 4 )
+text = "Start Game"
+align = 1
+valign = 1
+
+[node name="platform" parent="." instance=ExtResource( 3 )]
+visible = false
+position = Vector2( 300, 688 )
+
+[node name="ball" parent="." instance=ExtResource( 1 )]
+visible = false
+position = Vector2( 237, 432 )
+
+[node name="points" type="Label" parent="."]
+margin_left = 510.0
+margin_top = 321.0
+margin_right = 550.0
+margin_bottom = 335.0
+custom_fonts/font = SubResource( 6 )
+align = 1
+valign = 1
+
+[connection signal="pressed" from="start/btn_start" to="." method="_on_btn_start_pressed"]

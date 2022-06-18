@@ -18,5 +18,7 @@ func get_input():
 	move = move.normalized() * speed
 
 func _physics_process(delta):
-	get_input()
-	move = move_and_slide(move * delta * speed)
+	
+	if Global.play == true:
+		get_input()
+		move = move_and_slide(move * delta * speed)

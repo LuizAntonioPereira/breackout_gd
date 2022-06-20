@@ -12,7 +12,8 @@ func _ready():
 	pass
 
 
-func _physics_process(delta):
+func _process(delta):
+	
 	if Global.play == true and yes == true:
 		direction = Vector2(x,y)
 		yes = false			
@@ -23,5 +24,6 @@ func _physics_process(delta):
 		direction = direction.bounce(col.normal)
 		move_and_collide(reflect)
 
-func _on_VisibilityNotifier2D_screen_exited():
+func _on_VisibilityNotifier2D_screen_exited():	
 	get_tree().reload_current_scene()
+

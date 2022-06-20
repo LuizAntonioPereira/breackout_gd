@@ -108,22 +108,28 @@ position = Vector2( 237, 432 )
 
 [node name="points" type="Label" parent="."]
 margin_left = 510.0
-margin_top = 24.0
+margin_top = 18.0
 margin_right = 550.0
-margin_bottom = 55.0
+margin_bottom = 49.0
 custom_fonts/font = SubResource( 6 )
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="label" type="Label" parent="."]
 margin_left = 436.0
-margin_top = 24.0
+margin_top = 18.0
 margin_right = 493.0
-margin_bottom = 55.0
+margin_bottom = 49.0
 custom_fonts/font = SubResource( 6 )
 text = "Ponts:"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Label" type="Label" parent="."]
 margin_left = 37.0
@@ -145,5 +151,8 @@ custom_fonts/font = SubResource( 10 )
 text = "A and D || Arrows left and right"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [connection signal="pressed" from="start/btn_start" to="." method="_on_btn_start_pressed"]

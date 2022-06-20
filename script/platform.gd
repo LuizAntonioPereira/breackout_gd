@@ -9,7 +9,7 @@ func _ready():
 	pass
 
 func get_input():	
-
+	move.y = 0
 	if Input.is_action_pressed("ui_right"):
 		move.x =+ 1
 	if Input.is_action_pressed("ui_left"):

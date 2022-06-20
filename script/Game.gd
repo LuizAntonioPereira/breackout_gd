@@ -2,7 +2,6 @@ extends Node2D
 
 
 # Declare member variables here.
-
 onready var bk = preload("res://scenes/block.tscn")
 var x = 50
 var y = 70
@@ -14,20 +13,10 @@ var num = 0
 func _ready():
 	Global.play = false	
 	Global.point = 0
-			
-	for child in get_children().find("block"):
-		child.queue_free()
-	
-
-	pass # Replace with function body.
-
 
 func _process(delta):
 	
 	$points.text =	str(Global.point)
-	if Global.play == true:
-		create_block()		
-	pass
 
 func create_block():
 	
@@ -36,13 +25,14 @@ func create_block():
 			var block = bk.instance()
 			block.position = Vector2(x + y * (j),a + b * i)
 			num += 1
-			add_child(block)
-	pass
-
+			add_child(block)			
 
 func _on_btn_start_pressed():
 	
 	$start.visible = false
+	$Label.visible = false
+	$Label2.visible = false
 	$platform.visible = true
 	$ball.visible = true
 	Global.play = true
+	create_block()

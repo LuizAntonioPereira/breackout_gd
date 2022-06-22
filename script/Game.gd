@@ -15,6 +15,7 @@ var data = ""
 var save_path = SAVE_DIR + "sava.dat"
 
 func _ready():
+	
 	Global.play = false	
 	Global.point = 0
 	
@@ -25,7 +26,6 @@ func _ready():
 			var player_data = file.get_var()
 			file.close()
 			TranslationServer.set_locale(player_data)
-						
 
 func _process(delta):
 	
@@ -51,27 +51,31 @@ func _on_btn_start_pressed():
 	$btn_en.visible = false
 	$btn_es.visible = false
 	$btn_pt.visible = false
+	#$music.playing = true
 	
 	Global.play = true
 	create_block()
 
-
 func pt_pressed():
+		
 	data = "pt_BR"
 	TranslationServer.set_locale(data)	
 	save(data)
 
 func en_pressed():
+	
 	data = "en_US"
 	TranslationServer.set_locale(data)
 	save(data)
 
 func es_pressed():
+	
 	data = "es_ES"
 	TranslationServer.set_locale(data)
 	save(data)
 	
 func save(d):
+	
 	var dir = Directory.new()
 	var file = File.new()
 	
@@ -83,3 +87,5 @@ func save(d):
 		file.store_var(d)
 		file.close()
 
+func _on_language_finished():
+	$language.stop()

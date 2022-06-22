@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/538828__puredesigngirl__dramatic-music.mp3-a0bd4ad14a4dd67b914466b275386b99.mp3str"
+
+[deps]
+
+source_file="res://assets/sons/538828__puredesigngirl__dramatic-music.mp3"
+dest_files=[ "res://.import/538828__puredesigngirl__dramatic-music.mp3-a0bd4ad14a4dd67b914466b275386b99.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -42,6 +42,7 @@ func create_block():
 
 func _on_btn_start_pressed():
 	
+	$language.play()
 	$start.visible = false
 	$Lbl_moviment.visible = false
 	$lbl_keys.visible = false

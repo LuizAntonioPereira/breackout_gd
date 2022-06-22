@@ -51,25 +51,28 @@ func _on_btn_start_pressed():
 	$btn_en.visible = false
 	$btn_es.visible = false
 	$btn_pt.visible = false
-	#$music.playing = true
+	$music.playing = true
 	
 	Global.play = true
 	create_block()
 
 func pt_pressed():
 		
+	$language.play()	
 	data = "pt_BR"
 	TranslationServer.set_locale(data)	
 	save(data)
 
 func en_pressed():
 	
+	$language.play()
 	data = "en_US"
 	TranslationServer.set_locale(data)
 	save(data)
 
 func es_pressed():
 	
+	$language.play()
 	data = "es_ES"
 	TranslationServer.set_locale(data)
 	save(data)

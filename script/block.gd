@@ -1,11 +1,14 @@
 extends StaticBody2D
 
+var sfx = "res://assets/sons/select_006.ogg"
+const audio_scene = preload("res://scenes/audio_block.tscn")
 
 func body_entered(body):
 
-	if body.is_in_group("ball"):		
-		$Audio.play()
+	if body.is_in_group("ball"):
+		var audio = audio_scene.instance()
+		get_tree().root.call_deferred("add_child", audio)
+		audio.stream = load(sfx)
+		audio.play()
 		Global.point += 1
-
-func Audio_finished():
-	queue_free()
+		queue_free()

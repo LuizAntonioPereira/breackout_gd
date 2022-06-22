@@ -31,4 +31,3 @@ shape = SubResource( 2 )
 stream = ExtResource( 2 )
 
 [connection signal="body_entered" from="Area2D" to="." method="body_entered"]
-[connection signal="finished" from="Audio" to="." method="Audio_finished"]

@@ -233,4 +233,3 @@ stream = ExtResource( 7 )
 [connection signal="pressed" from="btn_pt" to="." method="pt_pressed"]
 [connection signal="pressed" from="btn_en" to="." method="en_pressed"]
 [connection signal="pressed" from="btn_es" to="." method="es_pressed"]
-[connection signal="finished" from="language" to="." method="_on_language_finished"]

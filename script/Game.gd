@@ -3,20 +3,33 @@ extends Node2D
 
 # Declare member variables here.
 onready var bk = preload("res://scenes/block.tscn")
+
+const SAVE_DIR = "user://saves/"
+
 var x = 50
 var y = 70
 var a = 70
 var b = 40
 var num = 0
+var data = ""
+var save_path = SAVE_DIR + "sava.dat"
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.play = false	
 	Global.point = 0
+	
+	var file = File.new()
+	if file.file_exists(save_path):
+		var error = file.open_encrypted_with_pass(save_path, File.READ, "P@paB3ar6969")
+		if error == OK:
+			var player_data = file.get_var()
+			file.close()
+			TranslationServer.set_locale(player_data)
+						
 
 func _process(delta):
 	
-	$points.text =	str(Global.point)
+	$lbl_num.text =	str(Global.point)
 
 func create_block():
 	
@@ -30,9 +43,43 @@ func create_block():
 func _on_btn_start_pressed():
 	
 	$start.visible = false
-	$Label.visible = false
-	$Label2.visible = false
+	$Lbl_moviment.visible = false
+	$lbl_keys.visible = false
 	$platform.visible = true
 	$ball.visible = true
+	$lbl_language.visible = false
+	$btn_en.visible = false
+	$btn_es.visible = false
+	$btn_pt.visible = false
+	
 	Global.play = true
 	create_block()
+
+
+func pt_pressed():
+	data = "pt_BR"
+	TranslationServer.set_locale(data)	
+	save(data)
+
+func en_pressed():
+	data = "en_US"
+	TranslationServer.set_locale(data)
+	save(data)
+
+func es_pressed():
+	data = "es_ES"
+	TranslationServer.set_locale(data)
+	save(data)
+	
+func save(d):
+	var dir = Directory.new()
+	var file = File.new()
+	
+	if !dir.dir_exists(SAVE_DIR):
+		dir.make_dir_recursive(SAVE_DIR)
+	
+	var error = file.open_encrypted_with_pass(save_path, File.WRITE, "P@paB3ar6969")
+	if error == OK:
+		file.store_var(d)
+		file.close()
+

@@ -1,3 +1,4 @@
+
 # breakout_gd
 #### É um jogo 2d feito na godot game engine.[PT]
 
@@ -36,6 +37,10 @@ Breakout HD es un juego basado en un antiguo juego creado por Atari en 1972.​�
     
 ### Screenshots
 
+![tela_inicial_breakout](https://user-images.githubusercontent.com/19380442/175566565-6c104759-5398-44bf-b927-db66b54b9aff.png)
+![tela_game](https://img.itch.zone/aW1hZ2UvMTU4NjY1MS85MjgxODI5LmdpZg==/250x600/1UFi6Y.gif)
+![tela_fim_breakout](https://user-images.githubusercontent.com/19380442/175566561-4921dc19-0e99-4e03-984d-05f62d1c6eb0.png)
+
 ### Demo
 
 Se quiser testar o projeto clique no link.
@@ -47,3 +52,8 @@ Si desea probar el proyecto, haga clic en el enlace.
 [Demo](https://dragaogames.itch.io/breakout-gd)
 
     
+## License
+
+Este projeto está licenciado sob a Licença MIT
+Este proyecto está licenciado bajo la Licencia MIT
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/LuizAntonioPereira/breakout_gd/blob/main/LICENSE) file for details

@@ -95,6 +95,9 @@ text = "b_S"
 align = 1
 valign = 1
 uppercase = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LogoBreakout" type="Sprite" parent="start"]
 position = Vector2( 312.5, 363 )

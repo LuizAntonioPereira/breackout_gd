@@ -12,6 +12,8 @@ config_version=4
 
 config/name="breakout_gd"
 run/main_scene="res://scenes/Game.tscn"
+boot_splash/image="res://assets/imagens/breakout.png"
+boot_splash/bg_color=Color( 1, 1, 1, 1 )
 config/icon="res://assets/imagens/icon_breakout.png"
 
 [autoload]
@@ -22,7 +24,6 @@ Global="*res://script/global.gd"
 
 window/size/width=600
 window/size/height=700
-window/size/fullscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep"
 

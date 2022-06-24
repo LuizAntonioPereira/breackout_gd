@@ -2,23 +2,19 @@ extends KinematicBody2D
 
 
 # Declare member variables here.
-export (int) var speed = 150
+export (int) var speed = 300
 var move = Vector2()
 
-func _ready():
-	pass
-
 func get_input():	
-	move.y = 0
-	if Input.is_action_pressed("ui_right"):
-		move.x =+ 1
-	if Input.is_action_pressed("ui_left"):
-		move.x =- 1
-
-	move = move.normalized() * speed
+	
+	var direction = Vector2(
+	Input.get_action_strength("ui_right") -
+	Input.get_action_strength("ui_left"),0).normalized()
+	
+	move = direction * speed
+	move = move_and_slide(move)
 
 func _physics_process(delta):
 	
 	if Global.play == true:
-		get_input()
-		move = move_and_slide(move * delta * speed)
+		get_input()		

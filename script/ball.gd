@@ -9,8 +9,6 @@ var yes = true
 
 func _ready():
 	Global.play = false	
-	pass
-
 
 func _process(delta):
 	
@@ -25,6 +23,6 @@ func _process(delta):
 		move_and_collide(reflect)
 
 func _on_VisibilityNotifier2D_screen_exited():	
-	#get_tree().reload_current_scene()
+	
 	get_tree().change_scene("res://scenes/game_over.tscn")
 

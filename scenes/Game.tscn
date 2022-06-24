@@ -10,10 +10,10 @@
 [ext_resource path="res://assets/imagens/logo_breakout.png" type="Texture" id=8]
 
 [sub_resource type="RectangleShape2D" id=7]
-extents = Vector2( 2.5, 405 )
+extents = Vector2( 2.5, 350 )
 
 [sub_resource type="RectangleShape2D" id=8]
-extents = Vector2( 2.5, 405 )
+extents = Vector2( 2.5, 350 )
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://fonts/KdamThmorPro-Regular.ttf"
@@ -58,8 +58,8 @@ __meta__ = {
 }
 
 [node name="background" type="ColorRect" parent="."]
-margin_right = 604.0
-margin_bottom = 799.0
+margin_right = 600.0
+margin_bottom = 700.0
 color = Color( 0.407843, 0.760784, 0.505882, 1 )
 __meta__ = {
 "_edit_use_anchors_": true
@@ -68,11 +68,11 @@ __meta__ = {
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="col_left" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 2.5, 405 )
+position = Vector2( 2.5, 350 )
 shape = SubResource( 7 )
 
 [node name="col_right" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2( 597.5, 405 )
+position = Vector2( 600, 350 )
 shape = SubResource( 8 )
 
 [node name="start" type="Node2D" parent="."]
@@ -136,24 +136,30 @@ valign = 1
 
 [node name="Lbl_moviment" type="Label" parent="."]
 margin_left = 37.0
-margin_top = 750.0
-margin_right = 77.0
-margin_bottom = 764.0
+margin_top = 651.0
+margin_right = 120.0
+margin_bottom = 690.0
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 10 )
 text = "l_move"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="lbl_keys" type="Label" parent="."]
 margin_left = 199.0
-margin_top = 744.0
+margin_top = 645.0
 margin_right = 360.0
-margin_bottom = 794.0
+margin_bottom = 695.0
 custom_fonts/font = SubResource( 10 )
 text = "l_info"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="btn_pt" type="TouchScreenButton" parent="."]
 position = Vector2( 16, 30 )

@@ -12,6 +12,5 @@ func _process(delta):
 func btn_pressed():
 	$music2.play()
 
-func finished():
-	yield(get_tree().create_timer(1.0),"timeout")
+func finished():	
 	get_tree().change_scene("res://scenes/Game.tscn")

@@ -5,7 +5,8 @@ extends Node2D
 onready var bk = preload("res://scenes/block.tscn")
 
 const SAVE_DIR = "user://saves/"
-
+var left_timer
+var start = false
 var x = 50
 var y = 70
 var a = 70
@@ -18,6 +19,9 @@ func _ready():
 	
 	Global.play = false	
 	Global.point = 0
+	start = false
+	
+	left_timer = get_tree().create_timer(3.0)
 	
 	var file = File.new()
 	if file.file_exists(save_path):
@@ -26,37 +30,46 @@ func _ready():
 			var player_data = file.get_var()
 			file.close()
 			TranslationServer.set_locale(player_data)
-
+			
 func _process(delta):
 	
-	$lbl_num.text =	str(Global.point)
+	$lbl_num.text =	str(Global.point)		
+	$time_start.text = str(int(left_timer.time_left))
+	
+	if Input.is_action_just_pressed("start_enter") and start == false:		
+		_on_btn_start_pressed()		
 
 func create_block():
 	
 	for i in range(8):
 		for j in range(8):
 			var block = bk.instance()
-			block.position = Vector2(x + y * (j),a + b * i)
+			block.position = Vector2(x + y * (j), a + b * i)
 			num += 1
 			add_child(block)			
 
-func _on_btn_start_pressed():
+func _on_btn_start_pressed():	
 	
-	$language.play()
+	$language.play()	
 	$start.visible = false
 	$Lbl_moviment.visible = false
 	$lbl_keys.visible = false
-	$platform.visible = true
-	$ball.visible = true
 	$lbl_language.visible = false
 	$btn_en.visible = false
 	$btn_es.visible = false
 	$btn_pt.visible = false
-	$music.playing = true
-	
-	Global.play = true
+	$lbl_start.visible = true
+	$time_start.visible = true		
+	yield(left_timer,"timeout")
+	Global.play = true	
 	create_block()
-
+	$platform.visible = true
+	$ball.visible = true
+	$time_start.visible = false
+	$lbl_start.visible = false
+	$music.play()
+	start = true
+	
 func pt_pressed():
 		
 	$language.play()	

@@ -12,8 +12,7 @@ func _process(delta):
 	
 	if Global.play == true and yes == true:
 		linear_velocity = Vector2(rand_range(-300, 300), -300)
-		yes = false
-	print(linear_velocity.length())
+		yes = false	
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("plane"):

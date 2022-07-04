@@ -91,10 +91,11 @@ position = Vector2( 301.25, 2 )
 shape = SubResource( 17 )
 
 [node name="start" type="Node2D" parent="."]
+position = Vector2( 0, -31 )
 
 [node name="btn_start" type="TouchScreenButton" parent="start"]
 modulate = Color( 0, 0, 0, 1 )
-position = Vector2( 173, 533 )
+position = Vector2( 173, 508 )
 scale = Vector2( 5.9375, 1.9375 )
 normal = ExtResource( 5 )
 
@@ -102,9 +103,9 @@ normal = ExtResource( 5 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 196.0
-margin_top = 544.0
+margin_top = 519.0
 margin_right = 441.0
-margin_bottom = 613.0
+margin_bottom = 588.0
 custom_fonts/font = SubResource( 2 )
 text = "b_S"
 align = 1

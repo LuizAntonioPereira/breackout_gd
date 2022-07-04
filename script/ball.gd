@@ -1,30 +1,40 @@
-extends KinematicBody2D
+extends RigidBody2D
 
 
 # Declare member variables here.
-var direction = Vector2.ZERO
-var x = 200
-var y = 600
+const SPEED := 40.0
+const MAX_SPEED := 1000.0
+var sfx = "res://assets/sons/select_006.ogg"
+const audio_scene = preload("res://scenes/audio_block.tscn")
 var yes = true
-
-func _ready():
-	
-	Global.play = false	
 
 func _process(delta):
 	
 	if Global.play == true and yes == true:
-		direction = Vector2(x,y + (Global.point * 10))
-		yes = false			
+		linear_velocity = Vector2(rand_range(-300, 300), -300)
+		yes = false
+
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("plane"):
+		_upgrade_velocity(body)
+
+func _on_body_exited(body: Node) -> void:
 	
-	var col = move_and_collide(direction * delta)
+	if body.is_in_group("block"):
+		Global.point += 1
+		body.queue_free()		
+		var audio = audio_scene.instance()
+		get_tree().root.call_deferred("add_child", audio)
+		audio.stream = load(sfx)
+		audio.play()
+
+func _upgrade_velocity(body) -> void:
 	
-	if col:
-		var reflect = col.remainder.bounce(col.normal)
-		direction = direction.bounce(col.normal)
-		move_and_collide(reflect)
+	var speed = get_linear_velocity().length()
+	var direction = position - body.global_position
+	var velocity = direction.normalized() * min((speed + SPEED) + (10 * Global.point), MAX_SPEED)
+	linear_velocity = velocity 
 
 func _on_VisibilityNotifier2D_screen_exited():	
 		
 	get_tree().change_scene("res://scenes/game_over.tscn")
-

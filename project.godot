@@ -57,7 +57,7 @@ pointing/emulate_touch_from_mouse=true
 [locale]
 
 fallback="pt_BR"
-translations=PoolStringArray( "res://language/language.en_US.translation", "res://language/language.es_ES.translation", "res://language/language.pt_BR.translation", "res://language/language.csv" )
+translations=PoolStringArray( "res://language/language.en_US.translation", "res://language/language.es_ES.translation", "res://language/language.pt_BR.translation" )
 locale_filter=[ 1, [ "en_US", "es_ES", "pt_BR" ] ]
 
 [physics]

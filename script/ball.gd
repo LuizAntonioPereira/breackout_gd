@@ -2,7 +2,7 @@ extends RigidBody2D
 
 
 # Declare member variables here.
-var SPEED := 40.0
+const SPEED := 10.0
 const MAX_SPEED := 1000.0
 var sfx = "res://assets/sons/select_006.ogg"
 const audio_scene = preload("res://scenes/audio_block.tscn")
@@ -13,12 +13,11 @@ func _process(delta):
 	if Global.play == true and yes == true:
 		linear_velocity = Vector2(rand_range(-300, 300), -300)
 		yes = false
-	print(SPEED)
+	print(linear_velocity.length())
 
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("plane"):
-		_upgrade_velocity(body)
-		SPEED += 10.0
+		_upgrade_velocity(body)		
 
 func _on_body_exited(body: Node) -> void:
 	

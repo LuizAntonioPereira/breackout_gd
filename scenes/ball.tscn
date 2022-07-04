@@ -14,9 +14,9 @@ radius = 9.5
 radius = 12.0
 
 [node name="ball" type="RigidBody2D" groups=["ball"]]
-mass = 2.5
 physics_material_override = SubResource( 2 )
 gravity_scale = 0.0
+linear_damp = 0.0
 script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
